@@ -1,0 +1,41 @@
+<link href="/css/modalFormStyle.css" rel="stylesheet">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<div id="modalChangePath" class="modal">
+  <div class="modal-content">
+    <span class="close-buttonChangePath" id="closeModalChangePath">X</span>
+    <label class="labelChangePath" for="path">Changed path:</label><br>
+    <input class="inputChangePath" type="text" id="path">
+    <form class="modalChangePath">
+      <div class="labelsChangePath">
+        <input class="changePath" type="button" id="changePathButton" onclick="sendDataFromChangePathPage()" value="Save"/>
+      </div>
+      <div>
+        <text class="errorTextChangePath" id="notOnlyIndexes" style="display: none;">Invalid route</text>
+        <text class="errorTextChangePath" id="emptyPath" style="display: none;">Empty path</text>
+        <text class="errorTextChangePath" id="notAllIndexes" style="display: none;">Not all points</text>
+        <text class="errorTextChangePath" id="duplicates" style="display: none;">Contains duplicates</text>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="/js/saveButtonHandlerChangePath.js"></script>
+<script src="/js/validationForChangePathPage.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  $(document).ready(function() {
+    $("#modalChangePath").draggable();
+    $('.modal').css('background-color', 'transparent');
+    adjustWidth(document.getElementById('path'));
+  });
+  function adjustWidth(element) {
+    element.style.width = ((element.value.length + 1) * 8) + 'px';
+  }
+</script>
+<script>
+  const saveButton1 = document.getElementById('changePathButton');
+  const modalConfigTSP1 = document.getElementById('modalChangePath');
+  saveButton1.addEventListener('click', function() {
+    modalConfigTSP1.style.display = 'none';
+  });
+</script>

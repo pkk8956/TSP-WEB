@@ -1,0 +1,42 @@
+<link href="/css/modalFormStyle.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<div id="modalConfigGA" class="modal">
+  <div class="modal-content">
+    <span class="close-buttonGA" id="closeModalConfigGA">X</span>
+    <form class="modalConfigGA">
+      <div class="labelsConfigGA">
+        <label class="labelGA" for="mutationRate">Mutation rate:</label>
+        <label class="labelGA" for="populationSize">Population size:</label>
+        <label class="labelGA" for="maxStagnation">Max stagnation:</label>
+        <label class="labelGA" for="elitismCount">Elitism count:</label>
+        <label class="labelGA" for="tournamentSize">Tournament size:</label>
+        <label class="labelGA" for="numOfGeneration">Num of Generation:</label>
+        <input class="saveConfigGA" type="button" onclick="sendDataFromGaConfigPage()" id="configGA" value="Save"/>
+      </div>
+      <div class="inputsGA">
+        <input class="inputGA" type="text" id="mutationRate"><br>
+        <input class="inputGA" type="text" id="populationSize"><br>
+        <input class="inputGA" type="text" id="maxStagnation"><br>
+        <input class="inputGA" type="text" id="elitismCount"><br>
+        <input class="inputGA" type="text" id="tournamentSize"><br>
+        <input class="inputGA" type="text" id="numOfGeneration"><br>
+        <text class="errorTextGA" id="G_FillAllFields" style="display: none;">Fill all fields</text>
+        <text class="errorTextGA" id="G_ZeroValueNotAllowed" style="display: none;">Zero value not allowed</text>
+        <text class="errorTextGA" id="G_NumericFormatOnly" style="display: none;">Numeric format only</text>
+        <text class="errorTextGA" id="G_ValueTooLarge"  style="display: none;">Value too large or too small</text>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="/js/saveButtonHandlerConfigGaPage.js"></script>
+<script src="/js/validationForGaConfigPage.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  const saveButton2 = document.getElementById('configGA');
+  const modalConfigTSP2 = document.getElementById('modalConfigGA');
+  saveButton2.addEventListener('click', function() {
+    modalConfigTSP2.style.display = 'none';
+  });
+</script>

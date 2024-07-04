@@ -1,0 +1,37 @@
+<link href="/css/modalFormStyle.css" rel="stylesheet">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<div id="modalConfigTSP" class="modal">
+    <div class="modal-content">
+        <span class="close-buttonTSP" id="closeModalConfigTSP">X</span>
+        <form class="modalConfigTSP">
+            <div class="labelsConfigTSP">
+                <label class="labelTSP" for="useConstraints">Use restriction:</label>
+                <label class="labelTSP" for="numOfCities">Number of points:</label>
+                <label class="labelTSP" for="numOfTraveler">Number of traveler:</label>
+                <label class="labelTSP" for="maxLoad">Max load for traveler:</label>
+                <input type="button" class="saveConfigTSP" onclick="sendDataFromConfigTspPage()" id="saveTspConfiguration" value="Save"/>
+            </div>
+            <div>
+                <input class="check" type="checkbox" id="useConstraints" name="myCheckbox"><br>
+                <input class="inputTSP" type="text" id="numOfCities"><br>
+                <input class="inputTSP" type="text" id="numOfTraveler"><br>
+                <input class="inputTSP" type="text" id="maxLoad"><br>
+                <text class="errorTextTSP" id="FillAllFields" style="display: none;">Fill all fields</text>
+                <text class="errorTextTSP" id="ZeroValueNotAllowed" style="display: none;">Zero value not allowed</text>
+                <text class="errorTextTSP" id="NumericFormatOnly" style="display: none;">Numeric format only</text>
+                <text class="errorTextTSP" id="ValueTooLarge"  style="display: none;">Value too large</text>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="/js/saveButtonHandlerConfigTspPaige.js"></script>
+<script src="/js/validationForTspConfigPage.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    const saveButton3 = document.getElementById('saveTspConfiguration');
+    const modalConfigTSP3 = document.getElementById('modalConfigTSP');
+    saveButton3.addEventListener('click', function() {
+        modalConfigTSP3.style.display = 'none';
+    });
+</script>
